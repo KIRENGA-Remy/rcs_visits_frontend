@@ -14,52 +14,6 @@ import { ProtectedRoute } from "./components/ProtectedRoute";
 
 const queryClient = new QueryClient();
 
-// const App = () => {
-//   const navigate = useNavigate(); // Add this hook
-
-//   return (
-//     <QueryClientProvider client={queryClient}>
-//       <TooltipProvider>
-//         <Toaster />
-//         <Sonner />
-//         <AuthProvider>
-//           <BrowserRouter>
-//             <Routes>
-//               <Route element={<ProtectedRoute />}>
-//                 <Route path="/" element={<Index />} />
-//               </Route>
-//               <Route 
-//                 path="/login" 
-//                 element={
-//                   <LoginPage 
-//                     onLogin={(user, token) => {
-//                       localStorage.setItem("authToken", token);
-//                       navigate('/');
-//                     }} 
-//                   />
-//                 }
-//               />
-//               <Route 
-//                 path="/register" 
-//                 element={
-//                   <RegisterPage 
-//                     onRegister={(user, token) => {
-//                       localStorage.setItem("authToken", token);
-//                       navigate('/');
-//                     }} 
-//                   />
-//                 }
-//               />
-//               <Route path="*" element={<NotFound />} />
-//             </Routes>
-//           </BrowserRouter>
-//         </AuthProvider>
-//       </TooltipProvider>
-//     </QueryClientProvider>
-//   );
-// };
-
-
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>

@@ -100,6 +100,7 @@ export const RegisterForm = ({ onRegister }: RegisterFormProps) => {
                 <Input
                   id="firstName"
                   type="text"
+                  name="first_name"
                   placeholder="Enter your first name"
                   value={firstName}
                   onChange={(e) => setFirstName(e.target.value)}
@@ -111,6 +112,7 @@ export const RegisterForm = ({ onRegister }: RegisterFormProps) => {
                 <Input
                   id="lastName"
                   type="text"
+                  name="last_name"
                   placeholder="Enter your last name"
                   value={lastName}
                   onChange={(e) => setLastName(e.target.value)}
@@ -121,7 +123,7 @@ export const RegisterForm = ({ onRegister }: RegisterFormProps) => {
             
             <div className="space-y-2">
               <Label htmlFor="role">Access Level</Label>
-              <Select value={role} onValueChange={setRole} required>
+              <Select value={role} name="role" onValueChange={setRole} required>
                 <SelectTrigger>
                   <SelectValue placeholder="Select your role" />
                 </SelectTrigger>
@@ -141,6 +143,7 @@ export const RegisterForm = ({ onRegister }: RegisterFormProps) => {
                 <Input
                   id="email"
                   type="email"
+                  name="email"
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -157,6 +160,7 @@ export const RegisterForm = ({ onRegister }: RegisterFormProps) => {
                 <Input
                   id="password"
                   type="password"
+                  name="password"
                   placeholder="Enter your password"
                   value={password}
                   onChange={(e) => {

@@ -19,10 +19,10 @@ interface LoginResponse {
   token: string;
 }
 
-const API_URL = 'http://localhost:8080/auth';
+const API_URL = 'http://localhost:4321/auth';
 
 export const register = async (data: RegisterData): Promise<AuthResponse> => {
-    const response = await axios.post<AuthResponse>(`${API_URL}/register`, data);
+    const response = await axios.post<AuthResponse>('http://localhost:4321/auth/register', data);
     return response.data;
 }
 
@@ -38,7 +38,7 @@ export const login = async (email: string, password: string): Promise<LoginRespo
 }
 
 export const verifyToken = async (token: string): Promise<User> => {
-  const response = await axios.get<User>(`${API_URL}/auth/verify`, {
+  const response = await axios.get<User>(`${API_URL}/verify`, {
     headers: {
       Authorization: `Bearer ${token}`
     }
